@@ -13,6 +13,7 @@ TODO: Delete this and the text above, and describe your gem
 gem 'polymorphic_attachments'
     
 $ bundle
+```
 
 2. 生成基本配置文件：
 
@@ -27,6 +28,7 @@ then, add js file included
 add css file included 
 
 *= require polymorphic_attachments/application
+```
 
 3. 自定义配置
 
@@ -37,6 +39,7 @@ modify config/initializes/polymorphic_attachments.rb
 PolymorphicAttachments.configure do
   self.upload_limit_nubmer = 3
 end
+```
 
 
 ## License
