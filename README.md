@@ -6,30 +6,33 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
+1. 修改 Gemfile 增加:
+
+```bash
+# Gemfile
+gem 'polymorphic_attachments'
+    
+$ bundle
+
+2. 生成基本配置文件：
 
 
-And then execute:
-    gem 'polymorphic_attachments'
-    $ bundle
-
-Or install it yourself as:
-
-
-## Usage
-
+```bash
 $ rails g polymorphic_attachments:install
 
 then, add js file included 
-    //= require polymorphic_attachments/application
+    
+//= require polymorphic_attachments/application
 
 add css file included 
 
-    *= require polymorphic_attachments/application
+*= require polymorphic_attachments/application
 
-## Development
+3. 自定义配置
 
-config/initializes/polymorphic_attachments.rb
+```ruby
+
+modify config/initializes/polymorphic_attachments.rb
 
 PolymorphicAttachments.configure do
   self.upload_limit_nubmer = 3
