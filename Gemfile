@@ -1,4 +1,8 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
-# Specify your gem's dependencies in procedure_template.gemspec
 gemspec
+
+gem 'simple_form', "~> 3.2.1"
+gem 'carrierwave', "~> 0.10"
+gem 'mini_magick'
+gem 'jquery-fileupload-rails'
