@@ -1,9 +1,5 @@
 class PolymorphicAttachment < ActiveRecord::Base
-  # acts_as_cached(:version => 2, :expires_in => 1.week)
-
   belongs_to :polymorphic_attachmentable, polymorphic: true, optional: true
-
-  # validates :attachment_file, :presence => true
 
   mount_uploader :attachment_file, PolymorphicAttachmentUploader
 
@@ -18,11 +14,7 @@ class PolymorphicAttachment < ActiveRecord::Base
       "type" => attachment_file.file.extension
     }
 
-
   end
-  # def image?
-  #   File.extname(file_name).downcase.in?(['.png', '.jpg', 'jpeg'])
-  # end
 
   def filename
     attachment_file.file.original_filename if attachment_file.file
@@ -35,13 +27,5 @@ class PolymorphicAttachment < ActiveRecord::Base
   def thumbnail_url
     attachment_file.thumbnail_url
   end
-
-  # def thumbnail_url_without_asset_path
-  #   attachment_file.thumbnail_url_without_asset_path
-  # end
-
-  # def self.return_word
-  #   'hello world'
-  # end
 
 end

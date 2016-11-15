@@ -1,11 +1,3 @@
-# class UploaderGenerator < Rails::Generators::NamedBase
-#   source_root File.expand_path("../templates", __FILE__)
-
-#   def create_attachments_migration
-#     template "attachments.rb", File.join('db/migrate', class_path, "test.rb")
-#   end
-# end
-
 require 'rails/generators'
 module PolymorphicAttachments
   module Generators
@@ -13,13 +5,7 @@ module PolymorphicAttachments
 
       desc "install basic files"
       source_root File.expand_path("../templates", __FILE__)
-      # class_option :full, type: :boolean, desc: 'fully install'
 
-      # def create_attachments_files
-      #   migration_num = Time.now.strftime("%Y%m%d%H%M%S")
-      #   template "attachments_migration.rb", File.join('db/migrate', '', "#{migration_num}_create_polymorphic_attachments.rb")
-       
-      # end
 
       def add_initializer
         path = "#{Rails.root}/config/initializers/polymorphic_attachments.rb"
@@ -36,7 +22,6 @@ module PolymorphicAttachments
       end
 
       def add_migrations
-        # exec("rake homeland:install:migrations")
         migration_num = Time.now.strftime("%Y%m%d%H%M%S")
         template "attachments_migration.rb", File.join('db/migrate', '', "#{migration_num}_create_polymorphic_attachments.rb")
        

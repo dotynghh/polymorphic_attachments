@@ -4,11 +4,6 @@ module PolymorphicAttachments
     def create
       attachment = PolymorphicAttachment.new(polymorphic_attachment_params)
 
-      p '-=-=-=-=-=-=-==-=-=-=-=-'
-        # attachment.polymorphic_attachmentable_type = 'Article'
-        # attachment.polymorphic_attachmentable_id = 1
-        p attachment
-
       respond_to do |format|
         if attachment.save
           format.json { render json: attachment.to_jq_upload.to_json }
